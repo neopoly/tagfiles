@@ -4,6 +4,9 @@ cache: bundler
 bundler_args: --without tools
 rvm:
   - 2.1
+env:
+  global:
+    - CODECLIMATE_REPO_TOKEN=86c70d1103da065167764882ffb5d184647e2ade2929005a812bea267672cd7e
 matrix:
   fast_finish: true
 env:
