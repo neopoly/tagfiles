@@ -17,7 +17,7 @@ class RailsApp < Rails::Application
   config.eager_load = true
 
   config.secret_key_base = "a" * 30
-  # config.secret_token = "a" * 30
+  config.secret_token = "b" * 30
 
   config.root = File.expand_path("./rails_app", File.dirname(__FILE__))
 
