@@ -1,6 +1,6 @@
 require "spec_helper"
 
-ENV['RACK_ENV'] = 'test'
+ENV["RACK_ENV"] = "test"
 
 require_relative "rails_app"
 

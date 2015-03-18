@@ -6,3 +6,7 @@ gemspec
 group :test do
   gem "rails", "~> 4.2.0"
 end
+
+group :tools do
+  gem "rubocop"
+end

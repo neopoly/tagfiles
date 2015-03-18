@@ -1,14 +1,14 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'tagfiles/version'
+require "tagfiles/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "tagfiles"
   spec.version       = Tagfiles::VERSION
   spec.authors       = ["Peter Suschlik"]
   spec.email         = ["ps@neopoly.de"]
-  spec.summary       = %q{Provides the tagfile helper for Rails}
+  spec.summary       = "Provides the tagfile helper for Rails"
   spec.description   = spec.summary
   spec.homepage      = "https://github.com/neopoly/tagfiles"
   spec.license       = "MIT"

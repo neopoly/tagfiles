@@ -11,13 +11,13 @@ class RailsApp < Rails::Application
   config.eager_load = true
 
   config.secret_key_base = "a" * 30
-  #config.secret_token = "a" * 30
+  # config.secret_token = "a" * 30
 
   self
 end.initialize!
 
 class HelloController < ActionController::Base
   def world
-    render :text => "Hello world!"
+    render text: "Hello world!"
   end
 end
