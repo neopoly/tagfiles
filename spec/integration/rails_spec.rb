@@ -13,6 +13,6 @@ describe "Rails app" do
 
   it "works" do
     get "/hello_world"
-    assert_equal "Hello world!", last_response.body
+    assert_equal "Hello world!\n", last_response.body
   end
 end

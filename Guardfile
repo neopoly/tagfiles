@@ -8,7 +8,8 @@ group :red_green_refactor, halt_on_fail: true do
 
     # run all specs if supporting files are modified
     watch("spec/spec_helper.rb") { "spec" }
-    watch(%r{\Aspec/(?:lib|support|shared)/.+\.rb\z}) { "spec" }
+    watch(%r{\Aspec/(?:lib|support|shared|integration)/.+\.rb\z}) { "spec" }
+    watch(%r{\Aspec/.+/views}) { "spec" }
 
     # run a spec if it is modified
     watch(%r{\Aspec/(?:unit|integration)/.+_spec\.rb\z})
