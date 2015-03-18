@@ -4,7 +4,6 @@ cache: bundler
 bundler_args: --without tools
 rvm:
   - 2.1
-  - 2.2
 matrix:
   fast_finish: true
 env:
