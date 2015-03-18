@@ -5,6 +5,9 @@ gemspec
 
 group :tools do
   gem "rubocop"
+  gem "guard"
+  gem "guard-minitest"
+  gem "guard-rubocop"
 end
 
 rails_version = ENV.fetch("RAILS_VERSION", ">= 0")

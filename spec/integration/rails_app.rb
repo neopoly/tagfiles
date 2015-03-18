@@ -3,7 +3,7 @@ require "action_controller/railtie"
 
 class RailsApp < Rails::Application
   routes.append do
-    get "/hello/world" => "hello#world"
+    get "/:action" => "test"
   end
 
   # Enable cache classes. Production style.
@@ -16,8 +16,8 @@ class RailsApp < Rails::Application
   self
 end.initialize!
 
-class HelloController < ActionController::Base
-  def world
+class TestController < ActionController::Base
+  def hello_world
     render text: "Hello world!"
   end
 end

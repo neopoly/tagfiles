@@ -12,8 +12,7 @@ describe "Rails app" do
   end
 
   it "works" do
-    get "/hello/world"
-
+    get "/hello_world"
     assert_equal "Hello world!", last_response.body
   end
 end
