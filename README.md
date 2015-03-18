@@ -22,7 +22,7 @@
 [Source][github] |
 [Documentation][doc]
 
-Provides the tagfile helper for Rails
+Tagfiles provides the `tagfile` helper for Rails.
 
 ## Installation
 
