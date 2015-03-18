@@ -1,6 +1,9 @@
 require "rails"
 require "action_controller/railtie"
 
+# TODO: Find out how to remove this line below
+require "tagfiles/engine"
+
 class RailsApp < Rails::Application
   routes.append do
     get "/:action" => "test"
@@ -21,7 +24,4 @@ class RailsApp < Rails::Application
   self
 end.initialize!
 
-class TestController < ActionController::Base
-  def hello_world
-  end
-end
+require "tagfiles"

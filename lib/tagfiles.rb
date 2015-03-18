@@ -1,5 +1,4 @@
 require "tagfiles/version"
 
-module Tagfiles
-  # Your code goes here...
-end
+require "tagfiles/tagfile"
+require "tagfiles/engine" if defined? Rails

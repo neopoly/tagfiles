@@ -10,6 +10,10 @@ class IntegrationSpec < Minitest::Spec
   def app
     RailsApp
   end
+
+  def assert_body(expected)
+    assert_equal expected, last_response.body.strip
+  end
 end
 
 MiniTest::Spec.register_spec_type("RailsApp", IntegrationSpec)
