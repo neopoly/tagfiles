@@ -1,4 +1,8 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 # Specify your gem's dependencies in tagfiles.gemspec
 gemspec
+
+group :test do
+  gem "rails", "~> 4.2.0"
+end
