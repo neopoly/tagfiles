@@ -6,7 +6,10 @@ require "tagfiles/engine"
 
 class RailsApp < Rails::Application
   routes.append do
-    get "/:action" => "test"
+    get "/:controller/:action"
+    namespace :namespaced do
+      get "/:action" => "test"
+    end
   end
 
   config.logger = nil
@@ -20,8 +23,6 @@ class RailsApp < Rails::Application
   config.secret_token = "b" * 30
 
   config.root = File.expand_path("./rails_app", File.dirname(__FILE__))
+end
 
-  self
-end.initialize!
-
-require "tagfiles"
+RailsApp.initialize!
