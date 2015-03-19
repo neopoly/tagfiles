@@ -1,0 +1,15 @@
+<%= tf :box, title: "Plain box" do %>
+  Box content
+<% end %>
+
+<%= tf :box, title: "Nested box" do %>
+  <%= tf :box, title: "Level 2" do %>
+    Nested content
+  <% end %>
+<% end %>
+
+<%= tf :box, title: "No content" %>
+
+<h3>
+  <%= tf :label, value: "controller specific tagfile" %>
+</h3>
