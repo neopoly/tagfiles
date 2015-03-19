@@ -1,10 +1,25 @@
+# Tagfiles provides the `tagfile` helper for Rails.
 module Tagfiles
+  # Tagfile implementation
   module Tagfile
     # Renders a +layout+ when called with a block or +partial+ otherwise.
     #
+    # @param name [String] name of the used tagfile
+    # @param locals [Hash] optional locals passed to the tagfile
+    #
     # @example
     #   app/views/admin/page/index.html.erb:
-    #     <%= tagfile :box, var1: 23 %>
+    #
+    #     <%= tagfile :box, title: 23 do %>
+    #       Box content
+    #     <% end %>
+    #
+    #   app/views/tagfiles/_box.html.erb
+    #
+    #     <div class="box">
+    #       <h2><%= title %></h2>
+    #       <p><%= yield %></p>
+    #     </div>
     #
     # Following partial lookups will be performed:
     # * app/views/admin/page/tagfiles/_box.html.erb

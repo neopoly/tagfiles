@@ -1,4 +1,5 @@
 module Tagfiles
+  # Easy tagfile integration into Rails
   class Engine < Rails::Engine
     initializer "tagfiles" do
       ActiveSupport.on_load :action_controller do
