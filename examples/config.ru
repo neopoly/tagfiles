@@ -4,8 +4,6 @@ require "action_controller/railtie"
 $LOAD_PATH << "../lib"
 require "tagfiles"
 
-#ENV["RAILS_ENV"] = "production"
-
 class ExampleApp < Rails::Application
   routes.append do
     get "/" => "example#index"
