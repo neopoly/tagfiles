@@ -28,6 +28,10 @@ class TestController < ActionController::Base
   def inner
     render inline: "<%= tf :inner %>"
   end
+
+  def missing
+    render inline: "<%= tf :missing %>"
+  end
 end
 
 module Namespaced
@@ -38,6 +42,10 @@ module Namespaced
 
     def outer
       render inline: "<%= tf :outer %>"
+    end
+
+    def simple
+      render inline: "<%= tf :simple %>"
     end
   end
 end
@@ -86,6 +94,19 @@ describe RailsApp do
     it "renders outer tagfile in namespaced/tagfiles" do
       get "/namespaced/test/outer"
       assert_body %(outer)
+    end
+
+    it "renders most outer simple tagfile" do
+      get "/namespaced/test/simple"
+      assert_body %(simple[{:simple=>nil}]())
+    end
+  end
+
+  describe "missing template" do
+    it "error for missing template" do
+      get "/test/missing"
+      assert_equal 500, last_response.status
+      assert_body ""
     end
   end
 
