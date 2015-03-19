@@ -36,9 +36,42 @@ And then execute:
 
     $ bundle
 
-## Usage
+## Basic Usage
 
-TODO: Write usage instructions here
+Tagfile: `app/views/tagfiles/_box.html.haml`
+
+```haml
+.box
+  %h2= title
+  %p= yield
+```
+
+HAML file using `box` tagfile: `app/views/admin/page/index.html.haml`
+
+```haml
+= tf :box, title: "Box title"
+  Some box content
+```
+
+See [examples/](https://github.com/neopoly/tagfiles/tree/master/examples) and [specs](https://github.com/neopoly/tagfiles/blob/master/spec/integration/rails_spec.rb) for more examples.
+
+## Lookup order
+
+Rendering the `box` tagfile from the example above will trigger with following lookups:
+
+* `app/views/admin/page/tagfiles/_box.html.erb`
+* `app/views/admin/tagfiles/_box.html.erb`
+* `app/views/tagfiles/_box.html.erb`
+
+## Rails support
+
+Following Rails version are supported
+* 4.2
+* 4.1
+* 4.0
+* 3.2
+
+Feel free to test with earlier Rails versions. Feedback is welcome!
 
 ## Contributing
 
