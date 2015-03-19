@@ -65,13 +65,14 @@ Rendering the `box` tagfile from the example above will trigger with following l
 
 ## Rails support
 
-Following Rails version are supported
+Following Rails versions are supported:
+
 * 4.2
 * 4.1
 * 4.0
 * 3.2
 
-Feel free to test with earlier Rails versions. Feedback is welcome!
+Feel free to test earlier Rails versions. Feedback is welcome!
 
 ## Contributing
 
