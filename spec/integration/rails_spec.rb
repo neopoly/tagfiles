@@ -88,4 +88,24 @@ describe RailsApp do
       assert_body %(outer)
     end
   end
+
+  describe "anonymous controllers" do
+    let(:anon_controller) do
+      Class.new(ActionController::Base) do
+        def anon
+          render inline: "<%= tf :simple %>"
+        end
+      end
+    end
+
+    it "renders tagfile even w/o a name" do
+      controller = anon_controller
+      RailsApp.routes.draw do
+        get "/anon", to: controller.action(:anon)
+      end
+
+      get "/anon"
+      assert_body %(simple[{:simple=>nil}]())
+    end
+  end
 end
