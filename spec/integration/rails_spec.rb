@@ -51,32 +51,40 @@ module Namespaced
 end
 
 describe RailsApp do
+  def assert_tagfile(params={})
+    if Rails.version < '5'
+      params[:simple] = nil
+    end
+    content = params.delete(:content)
+    assert_body %(simple[#{params.inspect}](#{content}))
+  end
+
   describe "w/o block" do
     it "renders partial from tagfiles/ w/o params aliased" do
       get "/test/simple_alias"
-      assert_body %(simple[{:simple=>nil}]())
+      assert_tagfile
     end
 
     it "renders partial from tagfiles/ w/o params" do
       get "/test/simple"
-      assert_body %(simple[{:simple=>nil}]())
+      assert_tagfile
     end
 
     it "renders partial from tagfiles/ with params" do
       get "/test/simple_with_params", param: "foo"
-      assert_body %(simple[{:param=>"foo", :simple=>nil}]())
+      assert_tagfile :param => "foo"
     end
   end
 
   describe "with block" do
     it "renders layout from tagfiles/ w/o params" do
       get "/test/block"
-      assert_body %(simple[{:simple=>nil}](content))
+      assert_tagfile :content => "content"
     end
 
     it "renders layout from tagfiles/ with params" do
       get "/test/block_with_params", param: "foo"
-      assert_body %(simple[{:param=>"foo", :simple=>nil}](content))
+      assert_tagfile :param => "foo", :content => "content"
     end
   end
 
@@ -98,7 +106,7 @@ describe RailsApp do
 
     it "renders most outer simple tagfile" do
       get "/namespaced/test/simple"
-      assert_body %(simple[{:simple=>nil}]())
+      assert_tagfile
     end
   end
 
@@ -126,7 +134,7 @@ describe RailsApp do
       end
 
       get "/anon"
-      assert_body %(simple[{:simple=>nil}]())
+      assert_tagfile
     end
   end
 end
