@@ -14,8 +14,7 @@ rails_version = ENV.fetch("RAILS_VERSION", ">= 0")
 
 group :test do
   gem "rails", rails_version
-end
 
-if ENV["CODECLIMATE_REPO_TOKEN"]
-  gem "codeclimate-test-reporter", group: :test, require: nil
+  gem "simplecov"
+  gem "codeclimate-test-reporter", "~> 1.0.0"
 end
