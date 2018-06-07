@@ -67,10 +67,10 @@ Rendering the `box` tagfile from the example above will trigger with following l
 
 Following Rails versions are supported:
 
+* 5.2
+* 5.1
+* 5.0
 * 4.2
-* 4.1
-* 4.0
-* 3.2
 
 Feel free to test earlier Rails versions. Feedback is welcome!
 

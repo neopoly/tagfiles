@@ -1,19 +1,33 @@
 language: ruby
-sudo: false
 cache: bundler
-bundler_args: --without tools
-rvm:
-  - 2.1
+bundler_args: --without tools --jobs 3 --retry 3
+
+after_success:
+  - '[ "${TRAVIS_JOB_NUMBER#*.}" = "1" ] && bundle exec codeclimate-test-reporter'
+
 matrix:
   fast_finish: true
+  include:
+    - rvm: 2.5.1
+      env: RAILS_VERSION='~> 5.2.0'
+    - rvm: 2.5.1
+      env: RAILS_VERSION='~> 5.1.0'
+    - rvm: 2.5.1
+      env: RAILS_VERSION='~> 5.0.0'
+    - rvm: 2.4.4
+      env: RAILS_VERSION='~> 5.0.0'
+    - rvm: 2.3.6
+      env: RAILS_VERSION='~> 5.0.0'
+    - rvm: 2.4.4
+      env: RAILS_VERSION='~> 4.2.0'
+    - rvm: 2.3.6
+      env: RAILS_VERSION='~> 4.2.0'
+    - rvm: 2.2.8
+      env: RAILS_VERSION='~> 4.2.0'
 env:
   global:
     - CODECLIMATE_REPO_TOKEN=86c70d1103da065167764882ffb5d184647e2ade2929005a812bea267672cd7e
-  matrix:
-    - RAILS_VERSION='~> 4.2.0'
-    - RAILS_VERSION='~> 4.1.0'
-    - RAILS_VERSION='~> 4.0.0'
-    - RAILS_VERSION='~> 3.2.0'
+
 notifications:
   webhooks:
     urls:
