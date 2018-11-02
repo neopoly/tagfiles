@@ -52,9 +52,7 @@ end
 
 describe RailsApp do
   def assert_tagfile(params = {})
-    if Rails.version < '5'
-      params[:simple] = nil
-    end
+    params[:simple] = nil if Rails.version < "5"
     content = params.delete(:content)
     assert_body %(simple[#{params.inspect}](#{content}))
   end
