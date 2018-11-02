@@ -1,7 +1,7 @@
 require "bundler"
 Bundler.require
 
-if ENV["CODECLIMATE_REPO_TOKEN"]
+if ENV["CC_TEST_REPORTER_ID"]
   require "simplecov"
   SimpleCov.start
 end

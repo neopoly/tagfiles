@@ -5,8 +5,8 @@
 [travis]: https://travis-ci.org/neopoly/tagfiles
 [travis-badge]: https://img.shields.io/travis/neopoly/tagfiles.svg?branch=master
 [codeclimate]: https://codeclimate.com/github/neopoly/tagfiles
-[codeclimate-climate-badge]: https://img.shields.io/codeclimate/github/neopoly/tagfiles.svg
-[codeclimate-coverage-badge]: https://codeclimate.com/github/neopoly/tagfiles/badges/coverage.svg
+[codeclimate-climate-badge]: https://img.shields.io/codeclimate/maintainability/neopoly/tagfiles.svg
+[codeclimate-coverage-badge]: https://img.shields.io/codeclimate/coverage/neopoly/tagfiles.svg
 [inchpages]: https://inch-ci.org/github/neopoly/tagfiles
 [inchpages-badge]: https://inch-ci.org/github/neopoly/tagfiles.svg?branch=master&style=flat
 

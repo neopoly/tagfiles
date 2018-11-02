@@ -16,5 +16,4 @@ group :test do
   gem "rails", rails_version
 
   gem "simplecov"
-  gem "codeclimate-test-reporter", "~> 1.0.0"
 end
