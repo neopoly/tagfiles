@@ -15,3 +15,11 @@ Style/RegexpLiteral:
   Exclude:
     - tagfiles.gemspec
     - Guardfile
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/integration/rails_spec.rb
+
+Style/Alias:
+  Exclude:
+    - lib/tagfiles/tagfile.rb

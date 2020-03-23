@@ -51,10 +51,8 @@ module Namespaced
 end
 
 describe RailsApp do
-  def assert_tagfile(params={})
-    if Rails.version < '5'
-      params[:simple] = nil
-    end
+  def assert_tagfile(params = {})
+    params[:simple] = nil if Rails.version < "5"
     content = params.delete(:content)
     assert_body %(simple[#{params.inspect}](#{content}))
   end
@@ -72,19 +70,19 @@ describe RailsApp do
 
     it "renders partial from tagfiles/ with params" do
       get "/test/simple_with_params", param: "foo"
-      assert_tagfile :param => "foo"
+      assert_tagfile param: "foo"
     end
   end
 
   describe "with block" do
     it "renders layout from tagfiles/ w/o params" do
       get "/test/block"
-      assert_tagfile :content => "content"
+      assert_tagfile content: "content"
     end
 
     it "renders layout from tagfiles/ with params" do
       get "/test/block_with_params", param: "foo"
-      assert_tagfile :param => "foo", :content => "content"
+      assert_tagfile param: "foo", content: "content"
     end
   end
 

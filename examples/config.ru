@@ -18,8 +18,7 @@ end
 class ExampleController < ActionController::Base
   layout "application"
 
-  def index
-  end
+  def index; end
 end
 
 ExampleApp.initialize!

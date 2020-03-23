@@ -39,7 +39,7 @@ module Tagfiles
 
     private
 
-    TAGFILES_DIR = "tagfiles"
+    TAGFILES_DIR = "tagfiles".freeze
 
     def lookup_tagfile_prefix(controller_path, name)
       parts = controller_path.split("/")
@@ -47,6 +47,7 @@ module Tagfiles
       loop do
         prefix = (parts + [TAGFILES_DIR]).join("/")
         break prefix if controller.template_exists?(name, [prefix], true)
+
         parts.pop
         break TAGFILES_DIR if parts.empty?
       end
