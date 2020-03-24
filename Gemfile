@@ -17,7 +17,7 @@ group :test do
   gem "rails", rails_version
 
   gem "minitest"
-  gem "simplecov", require: false
+  gem "simplecov", "= 0.17", require: false
 end
 
 # Specify your gem's dependencies in tagfiles.gemspec
