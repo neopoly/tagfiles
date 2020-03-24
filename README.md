@@ -3,10 +3,10 @@
 [gem]: https://rubygems.org/gems/tagfiles
 [gem-badge]: https://img.shields.io/gem/v/tagfiles.svg
 [travis]: https://travis-ci.org/neopoly/tagfiles
-[travis-badge]: https://img.shields.io/travis/neopoly/tagfiles.svg?branch=master
+[travis-badge]: https://secure.travis-ci.org/neopoly/tagfiles.svg?branch=master
 [codeclimate]: https://codeclimate.com/github/neopoly/tagfiles
-[codeclimate-climate-badge]: https://img.shields.io/codeclimate/maintainability/neopoly/tagfiles.svg
-[codeclimate-coverage-badge]: https://img.shields.io/codeclimate/coverage/neopoly/tagfiles.svg
+[codeclimate-climate-badge]: https://codeclimate.com/github/neopoly/tagfiles.svg
+[codeclimate-coverage-badge]: https://codeclimate.com/github/neopoly/tagfiles/badges/coverage.svg
 [inchpages]: https://inch-ci.org/github/neopoly/tagfiles
 [inchpages-badge]: https://inch-ci.org/github/neopoly/tagfiles.svg?branch=master&style=flat
 
@@ -67,12 +67,15 @@ Rendering the `box` tagfile from the example above will trigger with following l
 
 Following Rails versions are supported:
 
+* 6.0
 * 5.2
-* 5.1
-* 5.0
 * 4.2
 
 Feel free to test earlier Rails versions. Feedback is welcome!
+
+## Ruby support
+
+Ruby versions from 2.4.9 to 2.7.0 are supported.
 
 ## Contributing
 

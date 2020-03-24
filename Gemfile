@@ -4,7 +4,7 @@ group :tools do
   gem "guard"
   gem "guard-minitest"
   gem "guard-rubocop"
-  gem "rubocop", "~> 0.60.0"
+  gem "rubocop", "~> 0.76.0"
 end
 
 group :development, :test do
@@ -17,7 +17,7 @@ group :test do
   gem "rails", rails_version
 
   gem "minitest"
-  gem "simplecov"
+  gem "simplecov", require: false
 end
 
 # Specify your gem's dependencies in tagfiles.gemspec

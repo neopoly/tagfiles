@@ -1,34 +1,39 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=86c70d1103da065167764882ffb5d184647e2ade2929005a812bea267672cd7e
+
 language: ruby
+
 cache: bundler
 bundler_args: --without tools --jobs 3 --retry 3
-
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - '([ "${TRAVIS_JOB_NUMBER#*.}" = "1" ] && ./cc-test-reporter before-build) || true'
-
-after_script:
-  - '([ "${TRAVIS_JOB_NUMBER#*.}" = "1" ] && ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT) || true'
 
 matrix:
   fast_finish: true
   include:
-    - rvm: 2.5.3
-      env: RAILS_VERSION='~> 5.2.0'
-    - rvm: 2.5.3
-      env: RAILS_VERSION='~> 5.1.0'
-    - rvm: 2.5.3
-      env: RAILS_VERSION='~> 5.0.0'
-    - rvm: 2.4.5
-      env: RAILS_VERSION='~> 5.0.0'
-    - rvm: 2.3.8
-      env: RAILS_VERSION='~> 5.0.0'
-    - rvm: 2.4.5
-      env: RAILS_VERSION='~> 4.2.0'
-    - rvm: 2.3.8
-      env: RAILS_VERSION='~> 4.2.0'
-    - rvm: 2.2.10
-      env: RAILS_VERSION='~> 4.2.0'
-env:
-  global:
-    - CC_TEST_REPORTER_ID=86c70d1103da065167764882ffb5d184647e2ade2929005a812bea267672cd7e
+    - rvm: 2.7.0
+      env: RAILS_VERSION='~> 6.0'
+    - rvm: 2.7.0
+      env: RAILS_VERSION='~> 5.2'
+    - rvm: 2.6.5
+      env: RAILS_VERSION='~> 6.0'
+    - rvm: 2.6.5
+      env: RAILS_VERSION='~> 5.2'
+    - rvm: 2.5.7
+      env: RAILS_VERSION='~> 6.0'
+    - rvm: 2.5.7
+      env: RAILS_VERSION='~> 5.2'
+    - rvm: 2.4.9
+      env: RAILS_VERSION='~> 5.2'
+    - rvm: 2.4.9
+      env: RAILS_VERSION='~> 4.2'
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+script:
+  - bundle exec rake
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
