@@ -5,8 +5,8 @@ require "tagfiles/version"
 Gem::Specification.new do |spec|
   spec.name          = "tagfiles"
   spec.version       = Tagfiles::VERSION
-  spec.authors       = ["Peter Suschlik"]
-  spec.email         = ["ps@neopoly.de"]
+  spec.authors       = ["Peter Leitzen"]
+  spec.email         = ["pl@neopoly.de"]
   spec.summary       = "Provides the tagfile helper for Rails"
   spec.description   = spec.summary
   spec.homepage      = "https://github.com/neopoly/tagfiles"
